@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Generator</title>
+
+    <!-- custome stylesheet start -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- custome stylesheet end -->
+
+    <!-- bootstrap link start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap link close -->
+  </head>
+
+  <body>
+    <!-- container start -->
+    <div class="container" id="cv-form">
+        <!-- heading of website -->
+      <h1 class="text-center my-5">Resume Generator</h1>
+        <!--heading end  -->
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-center">Personal Information</h3>
+
+          <!-- name group start -->
+          <div class="form-group mt-4">
+            <label for="nameField">Your Name</label>
+            <input
+              type="text"
+              id="nameField"
+              placeholder="Enter Your name"
+              class="form-control"
+            />
+          </div>
+          <!-- name group end -->
+
+          <!-- contact group start -->
+          <div class="form-group mt-4">
+            <label for="contactField">Your Contact</label>
+            <input
+              type="text"
+              id="contactField"
+              placeholder="Enter Your contact"
+              class="form-control"
+            />
+          </div>
+          <!-- contact group end -->
+
+          <!-- address group start -->
+          <div class="form-group mt-4">
+            <label for="contactField">Your Address</label>
+            <textarea
+              id="addressField"
+              placeholder="Enter Your address"
+              class="form-control"
+              rows="5"
+            ></textarea>
+          </div>
+          <!-- address group end -->
+
+          <!-- profile pic update start -->
+          <!-- <div class="form-group mt-4">
+            <label for="nameField">Select your photo</label>
+            <input
+              type="file"
+              id="imgField"
+              class="form-control"
+            />
+          </div> -->
+          <!-- profile pic update end -->
+
+          <p class="text-secondary my-3">Important Links</p>
+
+          <!-- facebook input start -->
+          <div class="form-group mt-4">
+            <label for="nameField">Facebook</label>
+            <input
+              type="text"
+              id="fbField"
+              placeholder="Enter here..."
+              class="form-control"
+            />
+          </div>
+          <!-- facebook input end -->
+
+          <!-- instagram input start -->
+          <div class="form-group mt-4">
+            <label for="nameField">Instagram</label>
+            <input
+              type="text"
+              id="instaField"
+              placeholder="Enter here..."
+              class="form-control"
+            />
+          </div>
+          <!-- instagram input end -->
+
+          <!-- linkedin input start -->
+          <div class="form-group mt-4">
+            <label for="nameField">Linkedin</label>
+            <input
+              type="text"
+              id="linkedField"
+              placeholder="Enter here..."
+              class="form-control"
+            />
+          </div>
+          <!-- linkedin input end -->
+
+        </div>
+        <div class="col-md-6">
+          <h3 class="text-center">Professional Information</h3>
+
+          <!-- objective textarea start -->
+          <div class="form-group mt-4">
+            <label for="contactField">Objective</label>
+            <textarea
+              placeholder="Enter Objective"
+              class="form-control"
+              id="objectiveField"
+              rows="8"
+            ></textarea>
+          </div>
+          <!-- objective textarea end -->
+
+          <!-- work experience textarea start -->
+          <div class="form-group mt-4" id="we">
+            <label for="contactField">Work Experience</label>
+            <textarea
+              placeholder="Enter Work Experience"
+              class="form-control weField"
+              rows="4"
+            ></textarea>
+          </div>
+          <!-- work experiene textarea end -->
+
+          <!-- button for work experience start-->
+          <div class="container text-center mt-3" id="weAddButton">
+            <button
+              onclick="addNewWEField()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Add
+            </button>
+          </div>
+          <!--button for work experience end  -->
+
+          <!-- academic qualification textarea start -->
+          <div class="form-group mt-4" id="aq">
+            <label for="contactField">Academic qualification</label>
+            <textarea
+              placeholder="Enter Academic qualification"
+              class="form-control aqField"
+              rows="3"
+            ></textarea>
+          </div>
+          <!-- academic qualification textarea end -->
+
+          <!-- button for academic qualification start -->
+          <div class="container text-center mt-3" id="weAddButton">
+            <button
+              onclick="addNewAQField()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Add
+            </button>
+          </div>
+          <!-- button for academic qualification end -->
+
+        </div>
+      </div>
+
+      <!-- button for generate cv start -->
+      <div class="container text-center my-5">
+        <button onclick="generateCV()" type="button" class="btn btn-primary">Generate CV</button>
+      </div>
+      <!-- button for generate cv end -->
+
+    </div>
+    <!-- container end -->
+
+    <!-- cv template start-->
+    <div class="container p-5" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center p-5 color">
+                <!-- first column -->
+                <img src="https://www.freedomspromise.org/wp-content/uploads/2020/01/male-silluette.jpg" alt="profile-pic" class="img-fluid myimg" id="imgTemplate">
+                <div class="container">
+                    <p id="nameT1">KUMAR KESHAV</p>
+                    <P id="contactT">+91 8210405813, +91 9852024937</P>
+                    <p id="addressT">MAHADDIPUR (NEAR RAJ TENT HOUSE) POST-MUNGER PS-KASIMBAZAR PIN-811201 STATE-BIHAR</p>
+                    <hr />
+                    <p>
+                        <a id="fbT" href="#">https://www.facebook.com/keshurana77@</a>
+                    </p>
+                    <p>
+                        <a id="instaT" href="#">https://www.instagram.com/keshurana77@</a>
+                    </p>
+                    <p>
+                        <a id="linkT" href="#">https://www.linkedin.com/keshurana77@</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8 p-3">
+                <!-- second column -->
+                <h1 id="nameT2" class="text-center" style="font-weight: 700;">KUMAR KESHAV</h1>
+                <!-- objective card -->
+                <div class="card mt-4">
+                    <div class="card-header color">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eius odio obcaecati amet eos at beatae nobis eligendi. Placeat illum adipisci eaque odit inventore, aliquam, alias corporis rem porro, doloremque eum. Porro commodi ex voluptas ab dolorum molestias quibusdam voluptatem nihil voluptates recusandae unde libero soluta accusantium, rem consequatur aliquam.</p>
+                    </div>
+                </div>
+                <!-- work experience -->
+                <div class="card mt-4">
+                    <div class="card-header color">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT" class="mt-2">
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- academic qualification -->
+                <div class="card mt-4">
+                    <div class="card-header color">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT" class="mt-2">
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li class="mb-2">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                            <li>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, perferendis?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn bg-primary">Print CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cv template end -->
+
+    <!-- custome javascript source file start -->
+    <script src="./script.js"></script>
+    <!-- custome javascript source file end -->
+
+    <!-- bootstrap javascript source file start -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap javascript source file end -->
+
+  </body>
+</html>
